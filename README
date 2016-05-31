@@ -1,0 +1,22 @@
+Ben Haase
+Assignment 5
+
+To run:
+	type "make"
+	type "./oss"
+
+To cleanup:
+	type "make clean"
+
+Statistics about execution stored in file called "osstest", and also printed to the screen.
+The program uses the bankers algorithm to determine if the filling a processes request
+will result in a safe or unsafe state, and allocates accordingly.
+Each oss iteration the clock is progressed 500ms + random # 0-500ms, and if there are less
+than 18 processes running, spawns a new process.
+Child processes have a random termination after their initial request is filled and have a
+50-50 chance to terminate or request additional resources and wait after they have run for
+a certain amount of time.
+Throughput is the number of process that ran to completion.
+Turn around time is calculated by (time process terminated - time process entered the system)
+Wait time is how long a process spent waiting for requests.
+Utilization is (turn around time - wait time)/(throughput)
